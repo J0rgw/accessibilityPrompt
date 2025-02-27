@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de buena accesibilidad</title>
+    <style>
+        /* Estilos mejorados para accesibilidad */
+        /* Alto contraste para mejor legibilidad */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            color: #222;
+            background-color: #fff;
+        }
+
+        /* Estados de enfoque visibles */
+        a {
+            color: #0000EE;
+            text-decoration: underline;
+        }
+        
+        a:hover, a:focus {
+            text-decoration: underline;
+            outline: 2px solid #0000EE;
+            outline-offset: 2px;
+        }
+
+        /* Uso de colores con contraste adecuado y texto complementario */
+        .error {
+            color: #D50000;
+            background-color: #FFEBEE;
+            border-left: 4px solid #D50000;
+            padding: 10px;
+        }
+        
+        .correcto {
+            color: #007E33;
+            background-color: #E8F5E9;
+            border-left: 4px solid #007E33;
+            padding: 10px;
+        }
+
+        /* Estilos básicos para formularios */
+        form {
+            margin: 20px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #666;
+        }
+
+        /* Estilo para botón accesible */
+        .btn {
+            background-color: #0057b8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .btn:hover, .btn:focus {
+            background-color: #003d82;
+            outline: 2px solid #000;
+        }
+
+        /* Tabla accesible */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Skip link para navegación por teclado */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #0057b8;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Contenido visible pero oculto para lectores de pantalla */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip link para navegación por teclado -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+        <h1>Título principal con etiqueta semántica</h1>
+    </header>
+
+    <nav aria-label="Navegación principal">
+        <ul>
+            <li><a href="#seccion1">Sección 1</a></li>
+            <li><a href="#seccion2">Sección 2</a></li>
+            <li><a href="#seccion3">Sección 3</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <!-- Lista con estructura semántica correcta -->
+        <section aria-labelledby="lista-titulo">
+            <h2 id="lista-titulo">Lista ordenada correctamente</h2>
+            <ul>
+                <li>Primer elemento</li>
+                <li>Segundo elemento</li>
+                <li>Tercer elemento</li>
+                <li>Cuarto elemento</li>
+            </ul>
+        </section>
+
+        <!-- Texto con contraste adecuado -->
+        <p>Este texto tiene un contraste adecuado y es fácil de leer para todos los usuarios.</p>
+
+        <!-- Formulario accesible con etiquetas asociadas y agrupación -->
+        <section aria-labelledby="form-titulo">
+            <h2 id="form-titulo">Formulario de contacto</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required aria-required="true" autocomplete="name">
+                        <div id="nombre-description" class="visually-hidden">Introduce tu nombre y apellidos</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" aria-describedby="email-hint" required aria-required="true" autocomplete="email">
+                        <div id="email-hint">Formato: nombre@ejemplo.com</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn" aria-label="Enviar formulario">Enviar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- Tabla con cabeceras y estructura adecuada -->
+        <section aria-labelledby="tabla-titulo">
+            <h2 id="tabla-titulo">Tabla de participantes</h2>
+            <table aria-describedby="tabla-descripcion">
+                <caption id="tabla-descripcion">Lista de participantes con sus edades</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Persona 1</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Persona 2</td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Imagen con atributo alt descriptivo -->
+        <figure>
+            <img src="ejemplo-imagen.jpg" width="200" height="200" alt="Descripción detallada de la imagen que explica su contenido y propósito">
+            <figcaption>Pie de foto explicativo</figcaption>
+        </figure>
+        
+        <!-- Enlaces con descripción adecuada -->
+        <p>Para obtener más información sobre accesibilidad web, visite <a href="https://www.w3.org/WAI/">las guías de accesibilidad del W3C</a>.</p>
+
+        <!-- Uso correcto de colores con texto descriptivo -->
+        <div class="error" role="alert" aria-live="assertive">
+            <strong>Error:</strong> Este mensaje indica un error en el formulario.
+        </div>
+        <div class="correcto" role="status" aria-live="polite">
+            <strong>Éxito:</strong> Este mensaje indica que la operación ha sido completada correctamente.
+        </div>
+
+        <!-- Botón accesible -->
+        <button class="btn" aria-label="Mostrar información adicional" onclick="alert('Botón accesible activado');">Botón accesible</button>
+
+        <!-- Contenido expandible accesible -->
+        <div>
+            <button aria-expanded="false" aria-controls="contenido-expandible" id="boton-expandir">Mostrar contenido adicional</button>
+            <div id="contenido-expandible" hidden>
+                <p>Este contenido se muestra y oculta de manera accesible utilizando atributos ARIA.</p>
+            </div>
+        </div>
+
+        <!-- Video con subtítulos y descripción -->
+        <section aria-labelledby="video-titulo">
+            <h2 id="video-titulo">Contenido multimedia</h2>
+            <video controls width="320" height="240" aria-describedby="video-descripcion">
+                <source src="video-ejemplo.mp4" type="video/mp4">
+                <track kind="subtitles" src="subtitulos-es.vtt" srclang="es" label="Español">
+                <track kind="descriptions" src="descripciones.vtt" srclang="es" label="Descripciones auditivas">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <p id="video-descripcion">Este video muestra una demostración de cómo implementar la accesibilidad web.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ejemplo de Accesibilidad Web</p>
+        <nav aria-label="Enlaces de pie de página">
+            <ul>
+                <li><a href="#politica-privacidad">Política de privacidad</a></li>
+                <li><a href="#accesibilidad">Declaración de accesibilidad</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- Script para la funcionalidad del contenido expandible -->
+    <script>
+        document.getElementById('boton-expandir').addEventListener('click', function() {
+            var expanded = this.getAttribute('aria-expanded') === 'true' || false;
+            this.setAttribute('aria-expanded', !expanded);
+            var content = document.getElementById('contenido-expandible');
+            
+            if (expanded) {
+                content.hidden = true;
+                this.textContent = 'Mostrar contenido adicional';
+            } else {
+                content.hidden = false;
+                this.textContent = 'Ocultar contenido adicional';
+            }
+        });
+    </script>
+</body>
+</html>

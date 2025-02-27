@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de mala accesibilidad</title>
+    <style>
+        /* Estilos que empeoran la accesibilidad */
+        .oculto {
+            display: none;
+        }
+
+        .bajo-contraste {
+            color: #cccccc;
+            background-color: #eeeeee;
+        }
+
+        /* Enlace sin estado visible al enfocarse */
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:focus {
+            outline: none;
+        }
+
+        /* Solo color para transmitir información */
+        .error {
+            color: red;
+        }
+        .correcto {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Título principal sin etiqueta semántica</h1>
+    
+    <!-- Lista con encabezados desordenados -->
+    <ul>
+        <li><h4>Primer elemento</h4></li>
+        <li><h3>Segundo elemento</h3></li>
+        <li><h4>Tercer elemento</h4></li>
+        <li><h3>Cuarto elemento</h3></li>
+    </ul>
+
+    <!-- Texto con bajo contraste -->
+    <p class="bajo-contraste">Este texto tiene muy bajo contraste y es difícil de leer.</p>
+
+    <!-- Formulario sin etiquetas de asociación y sin atributo "for" en las etiquetas <label> -->
+    <form action="#">
+        <input type="text" placeholder="Nombre completo">
+        <input type="email" placeholder="Correo electrónico">
+        <button>Enviar</button>
+    </form>
+
+    <!-- Tabla sin cabecera ni identificación de celdas de encabezado -->
+    <table border="1">
+        <tr>
+            <td>Nombre</td>
+            <td>Edad</td>
+        </tr>
+        <tr>
+            <td>Persona 1</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Persona 2</td>
+            <td>30</td>
+        </tr>
+    </table>
+    
+    <!-- Imagen sin atributo "alt" -->
+    <img src="ejemplo-imagen.jpg" width="200" height="200">
+    
+    <!-- Enlace sin descripción adecuada -->
+    <a href="#">Click aquí</a>
+
+    <!-- Uso incorrecto de colores sin texto alternativo -->
+    <p class="error">Este mensaje indica un error.</p>
+    <p class="correcto">Este mensaje indica éxito.</p>
+
+    <!-- Div que actúa como botón sin atributo tabindex ni función accesible -->
+    <div style="padding: 10px; background-color: #ccc; cursor: pointer;" onclick="alert('No accesible');">Botón inaccesible</div>
+
+    <!-- Contenido importante oculto con display: none (no se detecta por lectores de pantalla) -->
+    <div class="oculto">Contenido oculto</div>
+
+    <!-- Texto con mala estructura y etiquetas incorrectas -->
+    <b><i>Texto en negrita y cursiva sin semántica adecuada.</i></b>
+
+    <!-- Video sin subtítulos ni descripción -->
+    <video controls>
+        <source src="video-ejemplo.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <!-- Botón sin nombre accesible -->
+    <button></button>
+
+    <!-- Formulario sin agrupación ni instrucciones claras -->
+    <form>
+        <fieldset>
+            <legend>Datos</legend> <!-- Pero sin etiquetas claras para cada campo -->
+            <input type="text">
+            <input type="email">
+        </fieldset>
+    </form>
+
+    <!-- Uso de "click aquí" sin contexto adecuado -->
+    <p>Para más información, <a href="#">click aquí</a>.</p>
+
+</body>
+</html>
