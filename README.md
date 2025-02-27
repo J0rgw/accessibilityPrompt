@@ -3,8 +3,6 @@
 This repository provides a comprehensive prompt designed for use with generative AI in 2025, aimed at fixing HTML and CSS to comply with WCAG 2.2 (WAI) accessibility requirements.
 
 ## Prompt
-
-##PROMPT
 >"review and modify the following HTML code to ensure compliance with web accessibility requirements according to WCAG 2.2 (WAI), covering levels A, AA, and AAA. Consider the following guidelines and make the necessary modifications:
 ARIA Attributes:
 Ensure that all form elements (text fields, text areas, selectors, etc.) have the appropriate ARIA attributes (e.g., aria-label, aria-labelledby, aria-describedby, aria-invalid, aria-required) to describe their purpose, state, and any associated errors.
@@ -12,8 +10,8 @@ Apply ARIA roles to user interface components (buttons, links, menus, etc.) that
 Implement dynamic status messages with aria-live to notify screen reader users about content changes, especially in Single Page Applications (SPA).
 
 HTML5 Semantics:
-Use semantic HTML5 elements such as <header>, <nav>, <main>, <article>, <aside>, <footer>, and <section> to structure the page and define key regions.
-Group related links within <nav> elements.
+Use semantic HTML5 elements such as header, nav, main, article, aside, footer, and section to structure the page and define key regions.
+Group related links within nav elements.
 
 Alternative Text in Images:
 Ensure that all images have descriptive alt attributes that convey the content and function of the image. If the image is purely decorative, use an empty alt attribute (alt="").
