@@ -1,6 +1,6 @@
 # Accessibility Prompt for Generative AI (WCAG 2.2)
 
-This repository provides a comprehensive prompt designed for use with generative AI in 2025, aimed at fixing HTML and CSS to comply with WCAG 2.2 (WAI) accessibility requirements.
+This repository offers a thorough prompt intended for usage with generative AI in 2025, with the goal of modifying HTML and CSS to meet the accessibility standards of WCAG 2.2 (WAI).
 
 ## Prompt
 >"review and modify the following HTML code to ensure compliance with web accessibility requirements according to WCAG 2.2 (WAI), covering levels A, AA, and AAA. Consider the following guidelines and make the necessary modifications:
