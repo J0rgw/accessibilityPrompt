@@ -8,38 +8,28 @@ ARIA Attributes:
 Ensure that all form elements (text fields, text areas, selectors, etc.) have the appropriate ARIA attributes (e.g., aria-label, aria-labelledby, aria-describedby, aria-invalid, aria-required) to describe their purpose, state, and any associated errors.
 Apply ARIA roles to user interface components (buttons, links, menus, etc.) that do not use semantic native HTML elements, and use the corresponding ARIA states and properties.
 Implement dynamic status messages with aria-live to notify screen reader users about content changes, especially in Single Page Applications (SPA).
-
 HTML5 Semantics:
 Use semantic HTML5 elements such as header, nav, main, article, aside, footer, and section to structure the page and define key regions.
 Group related links within nav elements.
-
 Alternative Text in Images:
 Ensure that all images have descriptive alt attributes that convey the content and function of the image. If the image is purely decorative, use an empty alt attribute (alt="").
-
 Document Structure:
-Verify that the document structure is logical and hierarchical, using headings <h1> through <h6> appropriately to reflect the importance of the content.
-
+Verify that the document structure is logical and hierarchical, using headings h1 through h6 appropriately to reflect the importance of the content.
 Color Contrast:
 Ensure that the color contrast between text and background meets the minimum contrast ratios specified in WCAG 2.2 (4.5:1 for normal text, 3:1 for large text and user interface elements).
-
 Keyboard Accessibility:
 Verify that all website functionality is accessible via the keyboard, ensuring a logical and visible focus order.
 Avoid keyboard focus traps, where focus gets stuck in an element.
 For complex interactions (such as drag and drop), provide keyboard alternatives.
-
 Accessible Forms:
 Associate <label> elements with form fields using the for attribute.
 Provide clear instructions and helpful error messages for data entry.
 Use the autocomplete attribute to facilitate the entry of repeated data.
-
 Accessible Links:
 Ensure that the purpose of each link is clear from the link text or surrounding context.
-If the link text is not sufficiently descriptive, provide alternative text using ARIA attributes.
-
-Adaptability and Reflow:
+If the link text is not sufficiently descriptive, provide alternative text using ARIA attributes.Adaptability and Reflow:
 Ensure that the content can be reflowed and presented without loss of information or functionality, and without requiring two-dimensional scrolling.
 Use media queries and Flexbox for an adaptable design.
-
 Other WCAG 2.2 Criteria:
 Review and apply all other relevant success criteria and guidelines of WCAG 2.2 for levels A, AA, and AAA. This includes, but is not limited to, providing alternatives for non-textual content, ensuring that content is adaptable, and avoiding content that causes flashes or flickers.
 Please provide a revised HTML code that complies with these guidelines."
