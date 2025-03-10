@@ -119,12 +119,12 @@ This section details the accessibility improvements made to the example code.
     * Replaced generic links with descriptive text.
     * Ensured all links have a clear purpose from their text.
  
-* **Screenshots web**
-  ***Bad Pactices***
+## Screenshots web
+  * **Bad Pactices**
     * ![bad practises](screenshots/accs2.png)
     * ![bad practises](screenshots/waveBad.png)
 
-  ***Good Practices***
+  * **Good Practices**
     * ![web fixed](screenshots/accs1.png)
     * ![web fixed](screenshots/waveFix.png)
 
