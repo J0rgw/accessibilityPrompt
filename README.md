@@ -118,5 +118,9 @@ This section details the accessibility improvements made to the example code.
 * **Links:**
     * Replaced generic links with descriptive text.
     * Ensured all links have a clear purpose from their text.
+ 
+* **Screenshots**
+    * ![bad practises](screenshots/accs2.png)
+    * ![web fixed](screenshots/accs1.png)
 
 This code is now optimized for use with assistive technologies like screen readers and complies with WCAG 2.2 accessibility requirements at levels A, AA, and AAA.
